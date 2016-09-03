@@ -78,9 +78,11 @@
     "flow-bin": "^0.32.0",
     "gulp-ava": "^0.14.1",
     "gulp-babel": "^6.1.2",
+    "gulp-flowtype": "^1.0.0",
     "gulp-jsdoc": "^0.1.5",
     "gulp-rollup": "^2.3.0",
     "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^2.0.0",
     "gulp-xo": "^0.12.0",
     "rollup-plugin-commonjs": "^4.1.0",
     "rollup-plugin-node-resolve": "^2.0.0"
