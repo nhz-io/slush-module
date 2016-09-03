@@ -4,7 +4,8 @@
   "description": "slush es6 module generator and maintainer",
   "main": "dist/slushfile.js",
   "scripts": {
-    "test": "gulp test"
+    "gulp": "node_modules/.bin/gulp",
+    "test": "npm run gulp -- test"
   },
   "repository": {
     "type": "git",
@@ -20,10 +21,15 @@
     "nhz-io",
     "slush-module"
   ],
-  "author": "Ishi Ruy <dev@nhz.io>",
+  "author": {
+    "name": "Ishi Ruy",
+    "email": " <dev@nhz.io>",
+    "url": "https://github.com/nhz-io"
+  },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nhz-io/slush-module/issues"
+    "url": "https://github.com/nhz-io/slush-module/issues",
+    "email": "dev@nhz.io"
   },
-  "homepage": "https://github.com/nhz-io/slush-module#readme"
+  "homepage": "https://nhz-io.github.io/slush-module"
 }
