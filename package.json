@@ -63,7 +63,8 @@
     "gulp-todo": "^5.0.0",
     "inquirer": "^1.1.3",
     "jsdoc": "^3.4.0",
-    "slush": "^1.1.1"
+    "slush": "^1.1.1",
+    "vinyl-paths": "^2.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.14.0",
