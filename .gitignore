@@ -1,0 +1,13 @@
+node_modules
+temp
+tmp
+.tmp
+.temp
+build
+.build
+*.log
+dist
+.dist
+esdoc
+.esdoc
+.nyc_output
