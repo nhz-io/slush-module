@@ -22,6 +22,8 @@ import lint from 'gulp-xo'
 
 import test from 'gulp-ava'
 
+import './tasks'
+
 /** Flow */
 gulp.task('flow', () =>
   gulp.src(['src/**/*.js'])
