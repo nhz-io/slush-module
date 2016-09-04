@@ -56,9 +56,7 @@ export class Question {
 
 	/** Prompt the question with inquirer returning promised answer */
 	ask() : Promise<IAnswer> {
-		return inquirer.prompt(this.data()).then(a =>
-			new Answer({key: this.name, value: a[this.name]})
-		)
+		return inquirer.prompt(this.data()).then(a => new Answer(a[0]))
 	}
 
 	/** Clone the question (or passed in source) as new Question */
