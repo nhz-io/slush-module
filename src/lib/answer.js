@@ -11,6 +11,7 @@ export interface IAnswerData {
 export interface IAnswer extends IAnswerData {
 	constructor(args: IAnswerData) : IAnswer;
 	data(source? : IAnswerData) : IAnswerData;
+	clone(source? : IAnswerData) : IAnswer;
 }
 
 export class Answer {
@@ -27,6 +28,11 @@ export class Answer {
 		return clone(pick(source || this, [
 			'key', 'value',
 		]))
+	}
+
+	/** Clone the answer (or passed in source) as new Answer */
+	clone(source?: IAnswerData) : IAnswer {
+		return new Answer(source || this)
 	}
 }
 
