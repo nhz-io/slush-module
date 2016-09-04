@@ -2,6 +2,7 @@
 
 import pick from 'lodash.pick'
 import clone from 'lodash.clonedeep'
+import assign from 'lodash.assign'
 
 export interface IAnswerData {
 	key: string;
@@ -18,9 +19,8 @@ export class Answer {
 	key: string;
 	value: boolean | string;
 
-	constructor({key, value} : {key: string; value: boolean | string}) {
-		this.key = key
-		this.value = value
+	constructor(args: IAnswerData) {
+		assign(this, this.data(args))
 	}
 
 	/** Clone the answer (or passed in source) data as an Object */

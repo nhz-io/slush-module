@@ -1,6 +1,7 @@
 // src/lib/question.js @flow
 
 import inquirer from 'inquirer'
+import assign from 'lodash.assign'
 import pick from 'lodash.pick'
 import clone from 'lodash.clonedeep'
 import defaults from 'lodash.defaults'
@@ -42,7 +43,7 @@ export class Question {
 	when: Function | boolean;
 
 	constructor(args: IQuestionData) {
-		Object.assign((this: Object), this.data(args))
+		assign(this, this.data(args))
 	}
 
 	/** Clone the question (or passed in source) data as an Object */
