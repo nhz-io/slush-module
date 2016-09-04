@@ -71,7 +71,7 @@
     "vinyl-paths": "^2.1.0"
   },
   "devDependencies": {
-    "jsdoc": "^3.4.0",
+    "ava-spec": "^1.0.1",
     "babel-cli": "^6.14.0",
     "babel-plugin-mocktail": "^0.1.16",
     "babel-plugin-syntax-flow": "^6.13.0",
@@ -90,6 +90,8 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^2.0.0",
     "gulp-xo": "^0.12.0",
+    "is-class": "0.0.4",
+    "jsdoc": "^3.4.0",
     "mocktail": "^0.3.8",
     "rollup-plugin-commonjs": "^4.1.0",
     "rollup-plugin-flow": "^1.0.1",
@@ -129,6 +131,18 @@
       "test/**/*.js",
       "!**/tmp"
     ],
-    "babel": "inherit"
+    "babel": {
+      "presets": [
+        "es2015",
+        "stage-0",
+        "stage-1",
+        "stage-2",
+        "stage-3"
+      ],
+      "plugins": [
+        "transform-flow-strip-types",
+        "mocktail"
+      ]
+    }
   }
 }
