@@ -2,6 +2,7 @@
 build/.*
 dist/.*
 \.build/.*
+.*/node_modules/.*/test.*
 
 [options]
 all=false
