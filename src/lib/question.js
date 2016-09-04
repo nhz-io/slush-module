@@ -3,6 +3,7 @@
 import inquirer from 'inquirer'
 import pick from 'lodash.pick'
 import clone from 'lodash.clonedeep'
+import defaults from 'lodash.defaults'
 
 import {IAnswer, Answer} from './answer'
 
@@ -47,7 +48,7 @@ export class Question {
 	data(source?: IQuestionData) : IQuestionData {
 		return clone(pick(source || this, [
 			'type', 'name', 'message', 'default',
-			'choices', 'validate', 'filter', 'when'
+			'choices', 'validate', 'filter', 'when',
 		]))
 	}
 
@@ -59,6 +60,6 @@ export class Question {
 	}
 }
 
-export default function q(args: IQuestionData) : IQuestion {
-	return new Question(args)
+export default function q(...args: Array<Object>) : Question {
+	return new Question(defaults(...args))
 }
