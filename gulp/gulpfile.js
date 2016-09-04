@@ -7,6 +7,7 @@ import sequence from 'gulp-sequence'
 import del from 'del'
 
 import rollup from 'gulp-rollup'
+import rollupFlow from 'rollup-plugin-flow'
 import sourcemaps from 'gulp-sourcemaps'
 
 import flow from 'gulp-flowtype'
@@ -17,8 +18,6 @@ import resolve from 'rollup-plugin-node-resolve'
 
 import babel from 'gulp-babel'
 import uglify from 'gulp-uglify'
-
-import lint from 'gulp-xo'
 
 import test from 'gulp-ava'
 
@@ -36,12 +35,6 @@ gulp.task('flow', () =>
     }))
 )
 
-/** Lint */
-gulp.task('lint', () =>
-	gulp.src(['src/**/*.js'])
-		.pipe(lint())
-)
-
 /** Clean */
 gulp.task('clean', () => del(['build', 'dist', 'doc']))
 
@@ -54,18 +47,13 @@ gulp.task('test', () =>
 
 /** Rollup **/
 gulp.task('rollup', () =>
-	gulp.src('src/lib/*.js', {read: 'false'})
+	gulp.src(['src/**/*.js'], {read: 'false'})
 		.pipe(rollup({
 			sourceMap: true,
 			format: 'es6',
+			entry: 'src/questions/license.js',
 			plugins: [
-				resolve({
-					jsnext: true,
-					main: true
-				}),
-				commonjs({
-					include: 'node_modules/**'
-				})
+				rollupFlow(),
 			]
 		}))
 		.pipe(sourcemaps.write('.'))
