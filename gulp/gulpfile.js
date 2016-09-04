@@ -11,15 +11,12 @@ import rollupFlow from 'rollup-plugin-flow'
 import sourcemaps from 'gulp-sourcemaps'
 
 import flow from 'gulp-flowtype'
-import jsdoc from 'gulp-jsdoc'
 
 import commonjs from 'rollup-plugin-commonjs'
 import resolve from 'rollup-plugin-node-resolve'
 
 import babel from 'gulp-babel'
 import uglify from 'gulp-uglify'
-
-import test from 'gulp-ava'
 
 import './tasks'
 
@@ -37,13 +34,6 @@ gulp.task('flow', () =>
 
 /** Clean */
 gulp.task('clean', () => del(['build', 'dist', 'doc']))
-
-
-/** Test */
-gulp.task('test', () =>
-	gulp.src('test/*.js')
-		.pipe(test())
-)
 
 /** Rollup **/
 gulp.task('rollup', () =>
