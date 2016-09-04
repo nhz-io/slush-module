@@ -95,7 +95,8 @@
     "mocktail": "^0.3.8",
     "rollup-plugin-commonjs": "^4.1.0",
     "rollup-plugin-flow": "^1.0.1",
-    "rollup-plugin-node-resolve": "^2.0.0"
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "sinon": "^1.17.5"
   },
   "xo": {
     "esnext": true,
