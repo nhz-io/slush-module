@@ -28,6 +28,7 @@ export interface IQuestion extends IQuestionData {
 	constructor(args: IQuestionData) : IQuestion;
 	data(source?: IQuestionData): IQuestionData;
 	ask(): Promise<IAnswer>;
+	clone(source? : IQuestionData) : IQuestion;
 }
 
 export class Question {
@@ -57,6 +58,11 @@ export class Question {
 		return inquirer.prompt(this.data()).then(a =>
 			new Answer({key: this.name, value: a[this.name]})
 		)
+	}
+
+	/** Clone the question (or passed in source) as new Question */
+	clone(source?: IQuestionData) : IQuestion {
+		return new Question(source || this)
 	}
 }
 
